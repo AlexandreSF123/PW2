@@ -1,6 +1,6 @@
 <?php 
-$mensao = "I";
-if  ($mensao == "R")
+$mensao = "R";
+if  ($mensao == "I")
     echo "Reprovado";
     else
     echo "Aprovado";
