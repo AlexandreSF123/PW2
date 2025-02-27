@@ -11,26 +11,28 @@
         <fieldset>
             <legend>Informação sobre você</legend>
             <label for="Nome">Nome do Abençoado</label>
-            <input type="text" name="nome_do_cria" id="nome" placeholder="Nome da Inteligência" required>
+            <input type="text" name="nome" id="nome" placeholder="Nome da Inteligência" >
         <label for="Status">Status</label>
-            <input type="text" name="Status" id="Status" placeholder="Aqui Cego!!" required>
+            <input type="text" name="Status" id="Status" placeholder="Aqui Cego!!" >
         <input type="submit" value="Enviar">
             
         </fieldset>    
             </form>
-            <?php 
-            if (isset($_GET['nome'])) 
+        </body> 
+        </html>
+        <?php 
+            if (ISSET($_GET['nome'])) {
                 if (empty($_GET['nome'])) {
                     echo "Escreve Algo Cara!!";
-                } else {
+                } 
+                else {
             echo $_GET['nome'];
-            }
-             if (isset($_GET['Status'])) 
+            }}
+             if (isset($_GET['Status'])) {
                 if (empty($_GET['Status'])) {
                     echo "Escreve Algo Cara!!";
                 }
                  else {
                 echo $_GET['Status'];
-            }   ?>
-        </body>
-        </html>
+            }}   
+            ?>

@@ -20,19 +20,19 @@
             </form>
             <?php 
             if (ISSET($_GET['valor1'])) 
-                if (EMPTY($_GET['valor1'])) {
+                if (empty($_GET['valor1'])) {
                     echo "Valor 1 Obrigatório";
                 } else {
                     exit();
                 }
                  if (ISSET($_GET['valor2'])) 
-                if (EMPTY($_GET['valor2'])) {
+                if (empty($_GET['valor2'])) {
                     echo "Valor 2 Obrigatório";
                 }
                 else {
                 exit();
                 }
-                echo $_GET['valor1'] + $_GET['valor2']
+                echo $_GET['valor1'] + $_GET['valor2'];
                   ?>
         </body>
         </html>
