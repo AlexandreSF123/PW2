@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +15,19 @@
 </body>
 </html>
 <?php
+if (ISSET($_GET['nota'])) {
 
-if (ISSET($_GET['nota']) >= 7) {
+$nota = ISSET($_GET['nota'])
+if($nota > 7) {
     echo ('APROVADO');
-}if (ISSET($_GET('$nota')) < 7 && ISSET($_GET('nota')) > 5) {
+}
+elseif ($nota == 7 && $nota == 6) 
+{
     echo ("RECUPERAÇÃO");
 }
 else 
-    echo ("REPROVADO")
-
-
+{
+    echo ("REPROVADO");
+}
+}
 ?>
