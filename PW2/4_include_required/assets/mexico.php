@@ -1,3 +1,0 @@
-<?php include './header.php';  ?>
-<h1>Hello Mexico</h1>
-<?php include './footer.php';  ?>
