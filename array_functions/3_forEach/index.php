@@ -33,6 +33,7 @@ echo "<hr>";
     foreach ($patio as $key => $value) {
         echo "Veiculo: " . $value["nome"];
         echo "Placa: " . $value["Placa"];
+        echo "<hr>";
         echo "<img src='" . $value["foto"] . "' style='width: 300px'>";
         echo "<hr>";
     }
