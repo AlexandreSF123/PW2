@@ -9,8 +9,8 @@ $Escola = [
         ],
         "Administração" => [
             "1-Recursos Humanos" => ["Módulo I", "Módulo II"],
-            "2-Gestão de Pessoas",
-            "3-Teoria da Administração",
+            "2-Gestão de Pessoas" => [],
+            "3-Teoria da Administração" => [],
             "4-Inglês" => [" Módulo I"]
         ]
     ]
