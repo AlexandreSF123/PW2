@@ -1,4 +1,5 @@
 <?php
+// tentei com mais um forEach mas só esse deu
 $Escola = [
     "Etec" => [
         "Desenvolvimento de Sistemas" => [
@@ -18,7 +19,7 @@ $Escola = [
 function displayArray($array) {
     foreach ($array as $key => $value) {
         if (is_array($value)) {
-            echo "<b>"."$key\n" . "</b>";
+            echo "<li>" ."<b>"."$key\n" . "</b>" . "</li>";
             echo "<br>";
             displayArray($value);
         } else {
