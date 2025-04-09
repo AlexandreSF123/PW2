@@ -21,7 +21,7 @@ $cursos = [
 foreach ($cursos as $instituicao => $areas) {
     echo "<li><strong>$instituicao</strong></li><br>";
     foreach ($areas as $area => $subcategorias) {
-        echo "<ul></ul><li style='color: blue;'>$area</li><br>" ; 
+        echo "<ul></ul><li style='color: blue;'>$area</li>" ; 
     foreach ($subcategorias as $subcategoria => $modulos) {
         echo "<ul><li>$subcategoria</li></ul>";
         foreach ($modulos as $modulo) {
