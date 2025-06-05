@@ -8,15 +8,18 @@ $usuarios = $stmt ->fetchAll();
 // echo var_dump($usuarios);
 ?>
 
+<?php
 
+foreach ($usuarios as $index => $user) {
 
+?>
+
+<p><strong>Nome: </strong><?php echo $user['username'] ?></p>
+<a href="http://localhost/PW-II/PDO_CRUD/public/usuario/delete.php?id=<?php echo $user['id'];?>">Remover</a>
+<a href="http://localhost/PW-II/PDO_CRUD/public/usuario/update.php?id=<?php echo $user['id'];?>">Editar</a>
+<hr>
 
 <?php
-foreach ($usuarios as $indice => $user) {  ?>
-    <p><strong>Nome:</strong><?php echo $user["username"]; ?></p>
-    <a href="">Remover</a>
-    <a href="">Editar</a>
-    <hr>
-<?php } ?> 
-
-
+}    
+?>
+<?php include '../../includes/footer.php';?>
