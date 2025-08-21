@@ -1,5 +1,5 @@
 <?php
-class Autor {
+class Ebook {
     private $id ;
     private $titulo;
     private $descricao;
@@ -19,15 +19,44 @@ class Autor {
         $this->idioma = $idioma;
         $this->foto = $foto;
     }
-    public function inserir() { }
+    public function inserir($titulo, $descricao, $isbn, $data_publicacao, $preco, $idioma, $foto) {
+        $stmt = $pdo->prepare("INSERT INTO ebook (titulo, descricao, isbn, data_publicacao, preco, idioma, foto) VALUES (:titulo, :descricao, :isbn, :data_publicacao, :preco, :idioma, :foto)");
+	    $stmt->bindParam(':titulo', $titulo);
+	    $stmt->bindParam(':descricao', $descricao);
+	    $stmt->bindParam(':isbn', $isbn);
+	    $stmt->bindParam(':preco', $preco);
+	    $stmt->bindParam(':idioma', $idioma);
+	    $stmt->bindParam(':foto', $foto);
 
-    public function buscar($id) { }
+	    $stmt->execute();
+    }
+
+    public function buscar($id) {
+        $stmt = $pdo->query("SELECT * FROM ebook WHERE id = $id");
+        $ebooks = $stmt->fetchAll();
+     }
     
-    public function buscarTodos() { }
+    public function buscarTodos() { 
+        $stmt = $pdo->query("SELECT * FROM ebook");
+        $ebooks = $stmt->fetchAll();
+    }
     
-    public function atualizar($id) { }
+    public function atualizar($id) { 
+        $stmt = $pdo->prepare("UPDATE ebook SET titulo = :titulo, descricao = :descricao, isbn = :isbn, preco = :preco, idioma = :idioma, foto = :foto  WHERE id = :id");
+        $stmt->bindParam(':titulo', $titulo);
+        $stmt->bindParam(':descricao', $descricao);
+        $stmt->bindParam(':isbn', $isbn);
+        $stmt->bindParam(':preco', $preco);
+        $stmt->bindParam(':idioma', $idioma);
+        $stmt->bindParam(':foto', $foto);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
     
-    public function deletar($id) { }
+    public function deletar($id) { 		
+        $stmt = $pdo->prepare('DELETE FROM ebook WHERE id = :id');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();}
     
 
 }
