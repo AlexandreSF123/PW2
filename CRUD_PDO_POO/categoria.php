@@ -10,7 +10,6 @@ class Categoria {
     public function inserir($nome) {
         $stmt = $pdo->prepare("INSERT INTO categoria (nome) VALUES (:nome)");
         $stmt->bindParam(':nome', $nome);
-
         $stmt->execute();
     }
 
