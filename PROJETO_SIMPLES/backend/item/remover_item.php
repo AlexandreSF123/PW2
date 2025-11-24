@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
     $requestData = json_decode($data);
 
     // Agora você pode acessar os dados usando $requestData
-    $codigo = $requestData->CodFun;
+    $id = $requestData->CodFun;
 
 	// CodFun é o nome da coluna que está sendo enviado pelo cliente
-	$sql = "DELETE FROM Funcionarios WHERE CodFun='$codigo'";
+	$sql = "DELETE FROM item WHERE CodFun='$id'";
 
     if ($connection->query($sql) === true) {
         $response = [

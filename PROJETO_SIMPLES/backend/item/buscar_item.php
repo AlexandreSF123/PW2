@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $codigo = $requestData->CodFun;
 
 
-	$sql = "SELECT * FROM Funcionarios WHERE CodFun = '$codigo'";
+	$sql = "SELECT * FROM item WHERE CodFun = '$id'";
 
     $result = $connection->query($sql);
 
@@ -24,12 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $response = [
-            'funcionarios' => $funcionarios
+            'itens' => $item
         ];
 
     } else {
         $response = [
-            'funcionarios' => 'Nenhum registro encontrado!'
+            'itens' => 'Nenhum registro encontrado!'
         ];
     }
 
