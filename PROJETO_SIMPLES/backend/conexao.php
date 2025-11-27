@@ -1,18 +1,21 @@
 <?php
-	$host = "localhost"; // endereço do servidor
-	$usuario = "root"; // usuário do MySQL
-	$senha = ""; // senha do MySQL
-	$database = "Blog"; // nome do banco de dados
+$host = "localhost"; 
+$usuario = "root"; 
+$senha = ""; 
+$database = "Blog"; 
 
-	
-	try{
-		//criar instancia em pdo
-		$pdo = new PDO("mysqli:host=$host;database=$database", $usuario, $senha);
-	//mensagem de erro
-	$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXEPTION);
-	}catch (PDOExeption $e){
-		die('erro de conexão' .$e$e->getMessage());)
-	}
+try {
+    // Criar instância PDO 
+    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $usuario, $senha);
+
+    // identificar erros
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Conectado com sucesso!";
+} 
+catch (PDOException $e) {
+    echo "Erro: " . $e->getMessage();
+}
 	// // Cria a conexão
 	// $connection = new mysqli($host, $usuario, $senha, $database);
 	
