@@ -7,6 +7,23 @@
    <link rel="stylesheet" href="/PROJETO_SIMPLES/frontend/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+        <style>
+      .scroll-row {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .product-card {
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+        margin-right: 10px;
+      }
+      .card-img-top {
+        height: 140px;
+        object-fit: cover;
+      }
+    </style>
+    
   </head>
   <body>
 
@@ -16,57 +33,72 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-          <img src="logo/GuardianSec.png" alt="" id="logo">
-        GuardianSec
-        </a>
-            <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+        <a class="navbar-brand" href="#"> <img src="logo/GuardianSec.png" alt="" id="logo">GuardianSec</a>
+           <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
+
+            <!-- 5 itens normais -->
+            <li class="nav-item nav-item-normal"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" href="#">Produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" href="#">Contato</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" href="#">Ajuda</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" href="#">Sobre</a></li>
+
+            <!-- 11 itens naturais (aparecem só logado) -->
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 1</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 2</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 3</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 4</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 5</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 6</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 7</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 8</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 9</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 10</a></li>
+            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 11</a></li>
+
           </ul>
         </div>
       </div>
     </nav>
 
-  
+      <!-- CARROSSEL ORIGINAL -->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://randomwordgenerator.com/img/picture-generator/57e6d0424356a914f1dc8460962e33791c3ad6e04e50744172287edc904fc7_640.jpg" class="d-block w-100" alt="...">
+          <img src="https://randomwordgenerator.com/img/picture-generator/57e6d0424356a914f1dc8460962e33791c3ad6e04e50744172287edc904fc7_640.jpg" class="d-block w-100" />
         </div>
         <div class="carousel-item">
-          <img src="https://randomwordgenerator.com/img/picture-generator/54e9d5424a5baa14f1dc8460962e33791c3ad6e04e50744074267bd3954cc7_640.jpg" class="d-block w-100" alt="...">
+          <img src="https://randomwordgenerator.com/img/picture-generator/54e9d5424a5baa14f1dc8460962e33791c3ad6e04e50744074267bd3954cc7_640.jpg" class="d-block w-100" />
         </div>
         <div class="carousel-item">
-          <img src="https://randomwordgenerator.com/img/picture-generator/55e6d1464952a914f1dc8460962e33791c3ad6e04e50774977267cdd9f4bc4_640.jpg" class="d-block w-100" alt="...">
+          <img src="https://randomwordgenerator.com/img/picture-generator/55e6d1464952a914f1dc8460962e33791c3ad6e04e50774977267cdd9f4bc4_640.jpg" class="d-block w-100" />
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon"></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="carousel-control-next-icon"></span>
       </button>
     </div>
 
+
+    <!-- SEÇÕES -->
+    <div class="container mt-4">
+      <div id="secao1"></div>
+      <div id="secao2"></div>
+      <div id="secao3"></div>
+    </div>
 
 
     <script>
@@ -80,11 +112,7 @@
         {id:7, nome:"placa e pressão", preco:"129,90", img:"https://picsum.photos/300?random=17"},
         {id, nome:"cadeado com impressão digital", preco:"89,90", img:"https://picsum.photos/300?random=18"},
       ];
-    </script>
 
-
-
-    <script>
       function gerarSecao(titulo, id) {
         let container = document.getElementById(id);
 
@@ -115,21 +143,27 @@
         html += `</div>`;
         container.innerHTML = html;
       }
-    </script>
-
-
-
-    <div class="container">
-      <div id="secao1"></div>
-      <div id="secao2"></div>
-      <div id="secao3"></div>
-    </div>
-
-    <script>
       gerarSecao("Ofertas do Dia", "secao1");
       gerarSecao("Recomendados para Você", "secao2");
       gerarSecao("Mais Vendidos", "secao3");
+
+      const usuarioLogado = false;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const naturais = document.querySelectorAll(".nav-item-natural");
+        const normais = document.querySelectorAll(".nav-item-normal");
+
+        if (!usuarioLogado) {
+          naturais.forEach(i => i.style.display = "none");
+          normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
+        } else {
+          naturais.forEach(i => i.style.display = "block");
+        }
+      });
     </script>
+
+
+
 
 
     <footer class="text-center text-white mt-5" style="background:#343a40; padding:25px;">
