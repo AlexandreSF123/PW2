@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,30 +9,35 @@
    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">NAVBAR</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Perfil</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Produtos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Sair</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg " id="body-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <img src="logo/GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
+      
+       <button class="navbar-toggler bg-white" id="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me">
+          <!-- 5 itens normais -->
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="../home.html">Home</a></li>
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/listar_item.html">pesquisar Produtos</a></li>
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/criar_item.html">adcinar produtos</a></li>
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/editar_item.html">editar produtos</a></li>
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="login.html">conta</a></li>
+          <li class="nav-item nav-item-normal"><a class="nav-link" href="../Sobre.html">Sobre</a></li>
+
+          <!-- 11 itens admim (aparecem só logado) -->
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
+          <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <div class="container-fluid justify-content-center">
         <h2>Login</h2><em>
@@ -67,6 +73,20 @@
             }
             alert("Login realizado!");
         }
+                      /* TRAVA DE LOGIN */
+                      const usuarioLogado = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const admim = document.querySelectorAll(".nav-item-admim");
+  const normais = document.querySelectorAll(".nav-item-normal");
+
+  if (!usuarioLogado) {
+    admim.forEach(i => i.style.display = "none");
+    normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
+  } else {
+    admim.forEach(i => i.style.display = "block");
+  }
+});
     </script>
 
 

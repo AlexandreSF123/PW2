@@ -7,7 +7,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-
+    <nav class="navbar navbar-expand-lg " id="body-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <img src="logo/GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
+          
+           <button class="navbar-toggler bg-white" id="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me">
+              <!-- 5 itens normais -->
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="home.html">Home</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/listar_item.html">pesquisar Produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/criar_item.html">adcinar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/editar_item.html">editar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="cadastro/login.html">conta</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="Sobre.html">Sobre</a></li>
+  
+              <!-- 11 itens admim (aparecem só logado) -->
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
+  
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="container" id="lista"></div>
 
     <script>
@@ -59,6 +87,20 @@
         }
 
         getFuncionarios(); // Buscar Dados
+                     /* TRAVA DE LOGIN */
+      const usuarioLogado = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const admim = document.querySelectorAll(".nav-item-admim");
+  const normais = document.querySelectorAll(".nav-item-normal");
+
+  if (!usuarioLogado) {
+    admim.forEach(i => i.style.display = "none");
+    normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
+  } else {
+    admim.forEach(i => i.style.display = "block");
+  }
+});
     </script>
     
     

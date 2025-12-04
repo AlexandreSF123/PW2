@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg " id="body-nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> <img src="logo/GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
+          
+           <button class="navbar-toggler bg-white" id="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me">
+              <!-- 5 itens normais -->
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="../home.html">Home</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="listar_item.html">pesquisar Produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="criar_item.html">adcinar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="editar_item.html">editar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="cadastro/login.html">conta</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" href="Sobre.html">Sobre</a></li>
+  
+              <!-- 11 itens admim (aparecem só logado) -->
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
+  
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container">
+
+    <div class="product-container row">
+
+        <!-- IMAGEM -->
+        <div class="col-md-5">
+            <img id="imgProduto" class="product-img" src="" alt="Produto">
+        </div>
+
+        <!-- INFO -->
+        <div class="col-md-7">
+
+            <h2 id="nomeProduto"></h2>
+            <p class="text-success fw-bold">Estoque disponível</p>
+
+            <h3 class="text-danger">
+                R$ <span id="precoProduto"></span>
+            </h3>
+
+            <button class="btn-buy my-3">Comprar agora</button>
+            <button class="btn-cart mb-4">Adicionar ao carrinho</button>
+
+            <p class="text-muted mt-3">
+                Vendido pela <b>Segurança Store</b><br>
+                Entrega rápida garantida ✔
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- DESCRIÇÃO -->
+    <div class="description-box">
+        <h4>Descrição do Produto</h4>
+        <p id="descricaoProduto"></p>
+    </div>
+
+</div>
+
+<script>
+    // MESMA LISTA USADA NA HOME
+    const produto = [
+        {id:1, nome:"tranca com senha", preco:"79,90", img:"https://picsum.photos/600?random=11", desc:"Tranca digital moderna para portas internas."},
+        {id:2, nome:"alarme com aplicativo", preco:"149,90", img:"https://picsum.photos/600?random=12", desc:"Alarme inteligente com controle via app."},
+        {id:3, nome:"camera com infravermelho", preco:"229,90", img:"https://picsum.photos/600?random=13", desc:"Câmera com visão noturna avançada."},
+        {id:4, nome:"alarme de movimento", preco:"59,90", img:"https://picsum.photos/600?random=14", desc:"Sensor de movimento de alta precisão."},
+        {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://picsum.photos/600?random=15", desc:"Câmera compacta de segurança."},
+        {id:6, nome:"alarme de lazers", preco:"39,90", img:"https://picsum.photos/600?random=16", desc:"Alarme com barreira a laser."},
+        {id:7, nome:"placa e pressão", preco:"129,90", img:"https://picsum.photos/600?random=17", desc:"Placa de pressão anti-invasão."},
+        {id:8, nome:"cadeado com impressão digital", preco:"89,90", img:"httpsum.photos/600?random=18", desc:"Cadeado biométrico resistente à água."}
+    ];
+
+    // PEGAR ID DA URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    // const id = 4
+    const produtos = produto.find(p => p.id == id);
+
+    if (!produtos) {
+        document.body.innerHTML = `
+            <h2 style="text-align:center; margin-top:40px;">Produto não encontrado!</h2>
+        `;
+    } else {
+        // PREENCHER CAMPOS
+        document.getElementById("imgProduto").src = produtos.img;
+        document.getElementById("nomeProduto").textContent = produtos.nome;
+        document.getElementById("precoProduto").textContent = produtos.preco;
+        document.getElementById("descricaoProduto").textContent = produtos.desc;
+    }
+          /* TRAVA DE LOGIN */
+          const usuarioLogado = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const admim = document.querySelectorAll(".nav-item-admim");
+  const normais = document.querySelectorAll(".nav-item-normal");
+
+  if (!usuarioLogado) {
+    admim.forEach(i => i.style.display = "none");
+    normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
+  } else {
+    admim.forEach(i => i.style.display = "block");
+  }
+});
+</script>
+
+</body>
+</html>

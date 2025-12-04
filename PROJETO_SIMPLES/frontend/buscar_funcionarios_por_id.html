@@ -38,6 +38,21 @@
         }
 
         getFuncionarios(); // Buscar Dados
+
+              /* TRAVA DE LOGIN */
+      const usuarioLogado = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const admim = document.querySelectorAll(".nav-item-admim");
+  const normais = document.querySelectorAll(".nav-item-normal");
+
+  if (!usuarioLogado) {
+    admim.forEach(i => i.style.display = "none");
+    normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
+  } else {
+    admim.forEach(i => i.style.display = "block");
+  }
+});
     </script>
     
     

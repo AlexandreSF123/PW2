@@ -7,52 +7,40 @@
    <link rel="stylesheet" href="/PROJETO_SIMPLES/frontend/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-        <style>
-      .scroll-row {
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-      .product-card {
-        display: inline-block;
-        vertical-align: top;
-        width: 200px;
-        margin-right: 10px;
-      }
-      .card-img-top {
-        height: 140px;
-        object-fit: cover;
-      }
-    </style>
-
   </head>
+<style>
+  body{
+    background-color: #2B332B;
+  }
+</style>
+
   <body>
 
    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg " id="body-nav">
       <div class="container-fluid">
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" id="NAV"> <img src="logo/GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
+        
+         <button class="navbar-toggler bg-white" id="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#"> <img src="logo/GS.png" alt="" id="logo"><b><i>GuardianSec<i><b></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          
-
-        <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="Nav-Bar">
+        <ul class="navbar-nav me" id="nav-links">
             <!-- 5 itens normais -->
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="home.html">Home</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/listar_item.html">pesquisar Produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/criar_item.html">adcinar produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="produto/editar_item.html">editar produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="cadastro/login.html">conta</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" href="Sobre.html">Sobre</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="home.html">Home</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/listar_item.html">pesquisar Produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/criar_item.html">adcinar produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/editar_item.html">editar produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="cadastro/login.html">conta</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="Sobre.html">Sobre</a></li>
 
-            <!-- 11 itens naturais (aparecem só logado) -->
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">pesquisar funcionario</a></li>
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">editar funcionario</a></li>
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">remover funcionario</a></li>
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 9</a></li>
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 10</a></li>
-            <li class="nav-item nav-item-natural"><a class="nav-link" href="#">Exclusivo 11</a></li>
+            <!-- 11 itens admim (aparecem só logado) -->
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
 
           </ul>
         </div>
@@ -60,16 +48,17 @@
     </nav>
 
       <!-- CARROSSEL ORIGINAL -->
-   <!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+   <div id="carouselExampleAutoplaying" class="carousel slide" id="carousel-item"data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://randomwordgenerator.com/img/picture-generator/57e6d0424356a914f1dc8460962e33791c3ad6e04e50744172287edc904fc7_640.jpg" class="d-block w-100" />
+          <img src="https://picsum.photos/300?random=1" class="d-block" />
         </div>
         <div class="carousel-item">
-          <img src="https://randomwordgenerator.com/img/picture-generator/54e9d5424a5baa14f1dc8460962e33791c3ad6e04e50744074267bd3954cc7_640.jpg" class="d-block w-100" />
+          <img src="https://picsum.photos/300?random=2" class="d-block" />
         </div>
         <div class="carousel-item">
-          <img src="https://randomwordgenerator.com/img/picture-generator/55e6d1464952a914f1dc8460962e33791c3ad6e04e50774977267cdd9f4bc4_640.jpg" class="d-block w-100" />
+          <img src="https://picsum.photos/300?random=3" class="d-block" />
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -78,11 +67,11 @@
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
-    </div>-->
+    </div>
 
 
     <!-- SEÇÕES -->
-    <div class="container mt-4">
+    <div class="container mt-4" id="container-secao">
       <div id="secao1"></div>
       <div id="secao2"></div>
       <div id="secao3"></div>
@@ -95,7 +84,7 @@
         {id:2, nome:"alarme com aplicativo", preco:"149,90", img:"https://picsum.photos/300?random=12"},
         {id:3, nome:"camera com infravermelho", preco:"229,90", img:"https://picsum.photos/300?random=13"},
         {id:4, nome:"alarme de movimento", preco:"59,90", img:"https://picsum.photos/300?random=14"},
-        {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://picsum.photos/300?random=15"},
+        {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://http2.mlstatic.com/D_NQ_NP_2X_615348-MLA95941985237_102025-F.webp"},
         {id:6, nome:"alarme de lazers", preco:"39,90", img:"https://picsum.photos/300?random=16"},
         {id:7, nome:"placa e pressão", preco:"129,90", img:"https://picsum.photos/300?random=17"},
         {id:8, nome:"cadeado com impressão digital", preco:"89,90", img:"https://picsum.photos/300?random=18"}
@@ -103,22 +92,24 @@
 
       function gerarSecao(titulo, id) {
         let container = document.getElementById(id);
-        let selecionados = [...produtos].sort(() => Math.random() - 0.5).slice(0, 5);
+        let selecionados = [...produtos].sort(() => Math.random() - 0.7).slice(0, 7);
 
-        let html = `<h3 class="mt-5 mb-3">${titulo}</h3><div class="scroll-row">`;
+        let html = `<h3 class="mt-5 mb-3" id="titulos-h3">${titulo}</h3><div class="scroll-row" id='scroll'>`;
 
         selecionados.forEach(p => {
           html += `
             <div class="product-card">
-              <div class="card shadow-sm">
-                <img src="${p.img}" class="card-img-top" />
-                <div class="card-body">
+             <a href=produto/listar_item_por_id.html?id=${p.id} style="text-decoration:none; color:inherit;">
+              <div class="card shadow-sm" id="border-card">
+                <img id="imgsec" src="${p.img}" class="card-img-top" />
+                <div class="card-body" id="card-body">
                   <p class="card-text">${p.nome}</p>
-                  <h6 class="text-danger">R$ ${p.preco}</h6>
+                  <h6 class="card-text card-preco">R$ ${p.preco}</h6>
                 </div>
               </div>
             </div>`;
         });
+       // como vamos aplicar isso sem banco?
 
         html += `</div>`;
         container.innerHTML = html;
@@ -132,14 +123,14 @@
       const usuarioLogado = false;
 
       document.addEventListener("DOMContentLoaded", () => {
-        const naturais = document.querySelectorAll(".nav-item-natural");
+        const admim = document.querySelectorAll(".nav-item-admim");
         const normais = document.querySelectorAll(".nav-item-normal");
 
         if (!usuarioLogado) {
-          naturais.forEach(i => i.style.display = "none");
+          admim.forEach(i => i.style.display = "none");
           normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
         } else {
-          naturais.forEach(i => i.style.display = "block");
+          admim.forEach(i => i.style.display = "block");
         }
       });
     </script>
@@ -148,13 +139,14 @@
 
 
 
-    <footer class="text-center text-white mt-5" style="background:#343a40; padding:25px;">
-      <p class="mb-0">© 2025 - GuardianSec | Todos os direitos reservados</p>
-    </footer>
-
+   
 
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-  </body>
+
+  </body> 
+  <footer class="text-center text-white mt-5" style="background:#343a40; padding:25px;">
+      <p class="mb-0">© 2025 - GuardianSec | Todos os direitos reservados</p>
+    </footer>
 </html>
