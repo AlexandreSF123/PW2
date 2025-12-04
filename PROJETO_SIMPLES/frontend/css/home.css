@@ -1,28 +1,36 @@
 
 #logo{
-max-width: 200px;    
-min-width: 90px;
-max-height: 200px;
-min-height: 90px;
+  height: 45px;
+  width: auto;
 }
-
+nav{
+    background-color: #374637;
+}
 #name-logo {
     color: azure;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
 #body-nav{
-    height: 150px;
+    height: auto;
+      padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 #links{
     color: azure;
     justify-content: center;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     
 }
-
+#nav-links .nav-links{
+     color: azure;
+      font-weight: 500;
+  margin-left: 10px;
+  transition: 0.3s;
+}
 .product-card{
     display: inline-block;
     vertical-align: top;
@@ -43,13 +51,9 @@ min-height: 90px;
     height: 140px;
     object-fit: cover;
 }
-#border-card{
-    
-}
 
-nav{
-    background-color: #374637;
-}
+
+
 
 #container-secao{
     background: #2B332B;
