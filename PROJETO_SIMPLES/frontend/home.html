@@ -23,7 +23,7 @@
         object-fit: cover;
       }
     </style>
-    
+
   </head>
   <body>
 
@@ -34,14 +34,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#"> <img src="logo/GuardianSec.png" alt="" id="logo">GuardianSec</a>
-           <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -110,43 +106,37 @@
         {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://picsum.photos/300?random=15"},
         {id:6, nome:"alarme de lazers", preco:"39,90", img:"https://picsum.photos/300?random=16"},
         {id:7, nome:"placa e pressão", preco:"129,90", img:"https://picsum.photos/300?random=17"},
-        {id, nome:"cadeado com impressão digital", preco:"89,90", img:"https://picsum.photos/300?random=18"},
+        {id:8, nome:"cadeado com impressão digital", preco:"89,90", img:"https://picsum.photos/300?random=18"}
       ];
 
       function gerarSecao(titulo, id) {
         let container = document.getElementById(id);
+        let selecionados = [...produtos].sort(() => Math.random() - 0.5).slice(0, 5);
 
-        // Seleciona 5 produtos aleatórios dos 8
-        let selecionados = [...produtos]
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 5);
-
-        let html = `
-          <h3 class="mt-5 mb-3">${titulo}</h3>
-          <div class="row g-3">
-        `;
+        let html = `<h3 class="mt-5 mb-3">${titulo}</h3><div class="scroll-row">`;
 
         selecionados.forEach(p => {
           html += `
-            <div class="col-6 col-md-3 col-lg-2">
+            <div class="product-card">
               <div class="card shadow-sm">
-                <img src="${p.img}" class="card-img-top">
+                <img src="${p.img}" class="card-img-top" />
                 <div class="card-body">
                   <p class="card-text">${p.nome}</p>
                   <h6 class="text-danger">R$ ${p.preco}</h6>
                 </div>
               </div>
-            </div>
-          `;
+            </div>`;
         });
 
         html += `</div>`;
         container.innerHTML = html;
       }
+
       gerarSecao("Ofertas do Dia", "secao1");
       gerarSecao("Recomendados para Você", "secao2");
       gerarSecao("Mais Vendidos", "secao3");
 
+      /* TRAVA DE LOGIN */
       const usuarioLogado = false;
 
       document.addEventListener("DOMContentLoaded", () => {
