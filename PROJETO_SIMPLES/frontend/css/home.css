@@ -127,4 +127,24 @@ nav{
   position: fixed;
   width: 100%;
   text-align: center;
+
+}
+#container-product{
+      border-radius: 25px;
+    background: #374637;
+    backdrop-filter: blur(5px);
+    margin: auto;
+    margin-top: 85px;
+}
+#imgproduto{
+  min-width: 75px;
+  max-width: 400px;
+  height: auto;
+  padding: 40px;
+  margin: auto;
+}
+#textproduto{
+  color: azure;
+  padding-left: 90px;
+  font-size: 1.2rem;
 }
