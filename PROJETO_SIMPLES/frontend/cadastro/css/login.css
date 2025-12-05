@@ -1,0 +1,98 @@
+body{
+    background-color: #2B332B;
+}
+
+#name-logo{
+    color: azure;
+}
+
+nav{
+    background-color: #374637;
+}
+
+#links{
+    color: azure;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.2rem;  
+}
+
+form{
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+
+}
+
+
+
+form{
+    border-radius: 25px;
+    background: #374637;
+    backdrop-filter: blur(5px);
+    margin: auto;
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+form > h2{
+    color: azure;
+    text-align: center;
+}
+
+form > label{
+    color: azure;
+    justify-content: start;
+}
+
+form > input{
+    outline: none;
+    color: azure;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: azure;
+ }
+#fixarRodape {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+form > p{
+    color: azure;
+    margin-top: 15px;
+}
+
+p > a{
+    text-decoration: none;
+    color: #49FCC3;
+    font-weight: bold;
+}
+
+form > button{
+    margin-top: 35px;
+    margin-left: 123px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background: #49FCC3;
+    color: #374637;
+    font-weight: bold;
+    transition: ease-in-out 0.7s;
+}
+
+form > button:hover{
+    scale: 1.2;
+    background: none;
+    color: #49FCC3;
+}
+

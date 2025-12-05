@@ -1,4 +1,6 @@
-
+body{
+    background-color: #2B332B;
+  }
 #logo{
   height: 45px;
   width: auto;
@@ -25,11 +27,35 @@ nav{
     font-size: 1.2rem;
     
 }
-#nav-links .nav-links{
+#navbarNAV .nav-link{
      color: azure;
       font-weight: 500;
   margin-left: 10px;
   transition: 0.3s;
+}
+#imgProduto{
+  min-width: 100px;
+  max-width: 300px;
+  height: auto;
+  padding: 10px;
+}
+#container-product{
+  justify-content: center;
+  border: black;
+  background-color: azure;
+  padding-top: 20px;
+}
+#titulos-h3 {
+  color: white;
+}
+.mb-3{
+  color: azure;
+}
+
+
+#login{
+  background-color: azure;
+
 }
 
 #fixarRodape {

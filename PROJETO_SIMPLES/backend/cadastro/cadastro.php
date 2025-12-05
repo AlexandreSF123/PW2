@@ -10,7 +10,7 @@
         $telefone  = $_POST["telefone"];
         $endereco  = $_POST["endereco"];
         $cidade    = $_POST["cidade"];
-        $cep       = $_POST["cep"];
+        $cep       = $_POST["CEP"];
         $pais      = $_POST["pais"];
     
         $sql = "INSERT INTO usuarios (senha, Nome, cpf, Telefone, Endereco, Cidade, CEP, Pais)

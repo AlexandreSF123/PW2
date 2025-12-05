@@ -4,39 +4,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
 
-   <link rel="stylesheet" href="/frontend/css/home.css">
+   <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   </head>
+
 <style>
-  body{
+    body{
     background-color: #2B332B;
   }
 </style>
-
   <body>
 
    
     <nav class="navbar navbar-expand-lg " id="body-nav">
       <div class="container-fluid">
-        <a class="navbar-brand" id="NAV"> <img src="GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
+        <a class="navbar-brand" id="NAV"> <img src="../logo/GS.png" alt="" id="logo"><b><i id="name-logo">GuardianSec</i></b></a>
          <button class="navbar-toggler bg-white" id="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
         </button>
           <div class="collapse navbar-collapse" id="NavBarNAV">
         <ul class="navbar-nav ms-auto" id="nav-links">
             <!-- 5 itens normais -->
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="home.html">Home</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/listar_item.html">pesquisar Produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/criar_item.html">adicionar produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="produto/editar_item.html">editar produtos</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="cadastro/login.html">conta</a></li>
-            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="Sobre.html">Sobre</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../home.html">Home</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="listar_item.html">pesquisar Produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="criar_item.html">adicionar produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="editar_item.html">editar produtos</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../cadastro/login.html">conta</a></li>
+            <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../Sobre.html">Sobre</a></li>
 
             <!-- 11 itens admim (aparecem só logado) -->
-            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
-            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
-            <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="../funcionario/listar_funcionarios.html">pesquisar funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="../funcionario/listar_funcionarios.html">editar funcionario</a></li>
+            <li class="nav-item nav-item-admim"><a class="nav-link" href="../funcionario/remover_funcionario_por_id.html">remover funcionario</a></li>
             <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
             <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
             <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
@@ -54,7 +54,7 @@
     <form id="buscarForm" class="mb-4">
         <label class="form-label">Código do Produto (ID)</label>
         <input type="number" class="form-control" id="idBusca" required>
-        <button class="btn btn-primary w-100 mt-3" type="submit">Buscar</button>
+        <button class="btn btn-primary  mt-3" type="submit">Buscar</button>
     </form>
 
     <!-- Form de edição (fica oculto até carregar os dados) -->
@@ -81,7 +81,7 @@
             <input type="text" class="form-control" id="categoria" required>
         </div>
 
-        <button class="btn btn-success w-100" type="submit">Salvar Alterações</button>
+        <button class="btn btn-success " type="submit">Salvar Alterações</button>
     </form>
 
     <div id="mensagem" class="mt-3"></div>
@@ -181,4 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<footer class="text-center text-white mt-5" id="fixarRodape" style="background:#343a40; padding:25px;">
+  <p class="mb-0">© 2025 - GuardianSec | Todos os direitos reservados</p>
+</footer>
 </html>
