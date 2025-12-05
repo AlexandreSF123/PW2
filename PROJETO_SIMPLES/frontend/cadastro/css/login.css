@@ -24,8 +24,6 @@ form{
 
 }
 
-
-
 form{
     border-radius: 25px;
     background: #374637;
@@ -58,7 +56,8 @@ form > input{
 
 ::-webkit-input-placeholder {
     color: azure;
- }
+}
+
 #fixarRodape {
     bottom: 0;
     position: fixed;
