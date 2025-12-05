@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
 
-   <link rel="stylesheet" href="/PROJETO_SIMPLES/frontend/css/home.css">
+   <link rel="stylesheet" href="/frontend/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   </head>
@@ -47,27 +47,32 @@
     </nav>
 
       <!-- CARROSSEL ORIGINAL -->
+       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" >
 
-   <div id="carouselExampleAutoplaying" class="carousel slide" id="carousel-item"data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://picsum.photos/300?random=1" class="d-block" />
-        </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/300?random=2" class="d-block" />
-        </div>
-        <div class="carousel-item">
-          <img src="https://picsum.photos/300?random=3" class="d-block" />
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+    <div class="carousel-item active">
+      <img src="https://picsum.photos/800/300?random=1" class="d-block w-300">
     </div>
 
+    <div class="carousel-item">
+      <img src="https://picsum.photos/800/300?random=2" class="d-block w-300">
+    </div>
+
+    <div class="carousel-item">
+      <img src="https://picsum.photos/800/300?random=3" class="d-block w-150">
+    </div>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+</div>
 
     <!-- SEÇÕES -->
     <div class="container mt-4" id="container-secao">
@@ -83,36 +88,46 @@
         {id:2, nome:"alarme com aplicativo", preco:"149,90", img:"https://picsum.photos/300?random=12"},
         {id:3, nome:"camera com infravermelho", preco:"229,90", img:"https://picsum.photos/300?random=13"},
         {id:4, nome:"alarme de movimento", preco:"59,90", img:"https://picsum.photos/300?random=14"},
-        {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://http2.mlstatic.com/D_NQ_NP_2X_615348-MLA95941985237_102025-F.webp"},
+        {id:5, nome:"camamera de segurança", preco:"99,90", img:"https://picsum.photos/300?random=1"},
         {id:6, nome:"alarme de lazers", preco:"39,90", img:"https://picsum.photos/300?random=16"},
         {id:7, nome:"placa e pressão", preco:"129,90", img:"https://picsum.photos/300?random=17"},
         {id:8, nome:"cadeado com impressão digital", preco:"89,90", img:"https://picsum.photos/300?random=18"}
       ];
 
-      function gerarSecao(titulo, id) {
-        let container = document.getElementById(id);
-        let selecionados = [...produtos].sort(() => Math.random() - 0.7).slice(0, 7);
+function gerarSecao(titulo, id) {
+  let container = document.getElementById(id);
 
-        let html = `<h3 class="mt-5 mb-3" id="titulos-h3">${titulo}</h3><div class="scroll-row" id='scroll'>`;
+  // Embaralhamento correto
+  let selecionados = [...produtos]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 7);
 
-        selecionados.forEach(p => {
-          html += `
-            <div class="product-card">
-             <a href=produto/listar_item_por_id.html?id=${p.id} style="text-decoration:none; color:inherit;">
-              <div class="card shadow-sm" id="border-card">
-                <img id="imgsec" src="${p.img}" class="card-img-top" />
-                <div class="card-body" id="card-body">
-                  <p class="card-text">${p.nome}</p>
-                  <h6 class="card-text card-preco">R$ ${p.preco}</h6>
-                </div>
-              </div>
-            </div>`;
-        });
-       // como vamos aplicar isso sem banco?
+  let html = `
+    <h3 class="mt-5 mb-3 titulo-secao">${titulo}</h3>
+    <div class="scroll-row">
+  `;
 
-        html += `</div>`;
-        container.innerHTML = html;
-      }
+  selecionados.forEach(p => {
+    html += `
+      <div class="product-card">
+        <a href="./produto/listar_item_por_id.html?id=${p.id}" class="link-produto">
+          <div class="card shadow-sm border-card">
+
+            <img id="imgsec" src="${p.img}" class="card-img-top" />
+            <div class="card-body card-body-sec">
+              <p class="card-text">${p.nome}</p>
+              <h6 class="card-text card-preco">R$ ${p.preco}</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
 
       gerarSecao("Ofertas do Dia", "secao1");
       gerarSecao("Recomendados para Você", "secao2");

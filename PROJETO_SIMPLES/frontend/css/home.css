@@ -1,4 +1,6 @@
-
+  body{
+    background-color: #2B332B;
+  }
 #logo{
   height: 45px;
   width: auto;
@@ -31,69 +33,91 @@ nav{
   margin-left: 10px;
   transition: 0.3s;
 }
-.product-card{
-    display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
+.product-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+  min-width: 50px; /* tamanho mínimo para o card */
+  flex: 0 0 auto;   /* impede que quebre para baixo */
 }
 
-.scroll-row{
-    font-size: 1.2rem;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-  
-
-
-.card-img-top{
-    height: 140px;
-    object-fit: cover;
+/* Linha de produtos com scroll horizontal */
+.scroll-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
 }
 
-
-
-
-#container-secao{
-    background: #2B332B;
+/* Barra de rolagem estilizada (Chrome, Edge, etc.) */
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
 }
 
-#titulos-h3{
-    color: white;
-}
-#card-body{
-    background-color: #374637;
-    color: azure;
-    width: 300px;
-    border: 2px solid black;
-}
-body{
-    background-color: antiquewhite;
-}
-.imgsec{
-    width: 100%;
-    height: auto;
-    
+.scroll-row::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
 }
 
-.carousel-item { 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;   
+.scroll-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
 }
+
+.scroll-row::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.product-card .card {
+  width: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imgsec {
+  height: auto;
+  object-fit: cover;
+}
+
+#container-secao {
+  background: #2B332B;
+  color: azure;
+}
+
+#titulos-h3 {
+  color: white;
+}
+
+#card-body {
+  background-color: #374637;
+  color: azure;
+  width: 300px;
+  border: 2px solid black;
+}
+
+#imgsec {
+  width: 100%;
+  height: 120px;
+}
+
+.card-preco {
+  font-weight: bold;
+}
+
+
 
 .carousel-item img {
 
-    min-width: 10%;
-    max-width: 30%;
+    min-width: 20%;
+    max-width: 100%;
 
-    width: 20%;
+
     height: auto;
     margin: auto;
 
-}
-
-.card-preco{
-    font-weight: bold;
 }
