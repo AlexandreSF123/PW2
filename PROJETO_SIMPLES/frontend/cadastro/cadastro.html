@@ -5,101 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/cadastro.css">
     <title>Cadastro</title>
-
-    <!-- <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            width: 100%;
-            max-width: 400px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        .input-group label {
-            font-size: 14px;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            font-size: 15px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: #4CAF50;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background: #45a049;
-        }
-
-        .link {
-            margin-top: 15px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .link a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-
-        /* Responsividade extra */
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-
-            .input-group input {
-                padding: 10px;
-            }
-
-            .btn {
-                padding: 10px;
-            }
-        }
-
-    </style> -->
 </head>
 
 <body>
@@ -114,112 +21,47 @@
             <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me">
               <!-- 5 itens normais -->
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="../home.html">Home</a></li>
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/listar_item.html">pesquisar Produtos</a></li>
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/criar_item.html">adcinar produtos</a></li>
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="../produto/editar_item.html">editar produtos</a></li>
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="login.html">conta</a></li>
-              <li class="nav-item nav-item-normal"><a class="nav-link" href="../Sobre.html">Sobre</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../home.html">Home</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../produto/listar_item.html">Pesquisar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../produto/criar_item.html">Adicionar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="../produto/editar_item.html">Editar produtos</a></li>
+              <li class="nav-item nav-item-normal"><a class="nav-link" id="links" href="login.html">Conta</a></li>
   
               <!-- 11 itens admim (aparecem só logado) -->
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">pesquisar funcionario</a></li>
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">editar funcionario</a></li>
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">remover funcionario</a></li>
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 9</a></li>
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 10</a></li>
-              <li class="nav-item nav-item-admim"><a class="nav-link" href="#">Exclusivo 11</a></li>
-  
+              <li class="nav-item nav-item-admim"><a class="nav-link" id="links" href="../funcionario/buscar_funcionarios_por_id.html">Pesquisar funcionario</a></li>
+              <li class="nav-item nav-item-admim"><a class="nav-link" id="links" href="../funcionario/remover_funcionario_por_id.html">Remover funcionario</a></li>
+              
             </ul>
           </div>
         </div>
       </nav>
 
-    <div class="container">
-        <h2>Criar Conta</h2>
+    <form action="../../backend/cadastro/cadastro.php" method="post">
+        <h2>Cadastro</h2>
+        <label for="idnome">Nome:</label>
+        <input type="text" name="nome" id="idnome">
+        <br>
+        <label for="idemail">Email:</label>
+        <input type="email" name="email" id="idemail">
+        <br>
+        <label for="idCpf">CPF:</label>
+        <input type="text" name="cpf" id="idCpf">
+        <br>
+        <label for="idTel">Telefone:</label>
+        <input type="tel" name="tel" id="idTel">
+        <br>
+        <label for="idCep">CEP:</label>
+        <input type="text" name="CEP" id="idCep">
+        <br>
+        <label for="idPais">País:</label>
+        <input type="text" name="pais" id="IdPais">
+        <br>
+        <label for="idSenha">Senha:</label>
+        <input type="password" name="senha" id="idSenha">
+        <p>Já possuí uma conta? <a href="login.html">Entrar</a></p>
+        <button>Criar</button>
+    </form>
 
-        <form id="registerForm">
-            <div class="input-group">
-                <label for="name">Nome Completo</label>
-                <input type="text" id="name" placeholder="Seu nome" required>
-            </div>
-
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="••••••••" required>
-            </div>
-
-            <div class="input-group">
-                <label for="confirmPassword">Confirmar Senha</label>
-                <input type="password" id="confirmPassword" placeholder="••••••••" required>
-            </div>
-
-            <button type="submit" class="btn">Cadastrar</button>
-        </form>
-
-        <p class="link">Já tem conta? <a href="../cadastro/login.html">Entrar</a></p>
-    </div>
-
-    <script>
-        document.getElementById("registerForm").addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            const nome = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const senha = document.getElementById("password").value;
-            const confirmarSenha = document.getElementById("confirmPassword").value;
-
-            if (senha !== confirmarSenha) {
-                alert("As senhas não coincidem!");
-                return;
-            }
-
-            // Cria objeto com dados
-            const dados = new FormData();
-            dados.append("nome", nome);
-            dados.append("email", email);
-            dados.append("senha", senha);
-
-            try {
-                const resposta = await fetch("../../backend/cadastro/cadastro.php", {
-                    method: "POST",
-                    body: dados
-                });
-
-                const resultado = await resposta.json();
-
-                if (resultado.status === "ok") {
-                    alert("Cadastro realizado com sucesso!");
-                    window.location.href = "../login/login.html";
-                } else {
-                    alert("Erro: " + resultado.mensagem);
-                }
-
-            } catch (error) {
-                alert("Erro ao se conectar com o servidor!");
-                console.error(error);
-            }
-        });
-              /* TRAVA DE LOGIN */
-              const usuarioLogado = false;
-
-document.addEventListener("DOMContentLoaded", () => {
-  const admim = document.querySelectorAll(".nav-item-admim");
-  const normais = document.querySelectorAll(".nav-item-normal");
-
-  if (!usuarioLogado) {
-    admim.forEach(i => i.style.display = "none");
-    normais.forEach((i, index) => i.style.display = index < 5 ? "block" : "none");
-  } else {
-    admim.forEach(i => i.style.display = "block");
-  }
-});
-
-    </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

@@ -7,14 +7,14 @@
         $senha     = $_POST["senha"];
         $nome      = $_POST["nome"];
         $cpf       = $_POST["cpf"];
-        $telefone  = $_POST["telefone"];
+        $telefone  = $_POST["tel"];
         $endereco  = $_POST["endereco"];
         $cidade    = $_POST["cidade"];
         $cep       = $_POST["CEP"];
         $pais      = $_POST["pais"];
     
-        $sql = "INSERT INTO usuarios (senha, Nome, cpf, Telefone, Endereco, Cidade, CEP, Pais)
-                VALUES ('$senha', '$nome', '$cpf', '$telefone', '$endereco', '$cidade', '$cep', '$pais')";
+        $sql = "INSERT INTO usuarios (senha, nome, cpf, tel,cidade, CEP, pais)
+                VALUES ('$senha', '$nome', '$cpf', '$telefone', '$cidade', '$cep', '$pais')";
     
         if ($conn->query($sql) === TRUE) {
             echo "Usuário cadastrado com sucesso!";

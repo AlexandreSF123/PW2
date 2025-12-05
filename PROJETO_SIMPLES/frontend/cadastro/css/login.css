@@ -1,5 +1,6 @@
 body{
     background-color: #2B332B;
+    padding-bottom: 50px;
 }
 
 #name-logo{
@@ -8,6 +9,8 @@ body{
 
 nav{
     background-color: #374637;
+    display: flex;
+    justify-content: space-between;
 }
 
 #links{
